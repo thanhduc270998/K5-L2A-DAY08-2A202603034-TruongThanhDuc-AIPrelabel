@@ -45,10 +45,15 @@
 
 | Ảnh | SAM (phiên bản) | Số click | Mask gồm người lái / hàng hoá? | Lỗi quan sát | File trong `masks/` |
 |---|---|---|---|---|---|
-| <<img_0xx>> | <<>> | <<>> | <<>> | <<>> | <<>> |
+| `img_013.jpg` | SAM 2.1 tiny (`sam2.1_t.pt`) | 3 (2 `+`, 1 `-`) | Có: điểm âm `(720,300)` tách được áo/quần người lái nhưng vẫn dính nhẹ dép/bàn chân và lem lên 3 người ngồi ăn phía sau qua khoang hở; không dính hàng hóa | Lem xuyên qua khoang hở sang người ở nền sau; sót biển `TAXI` trên nóc | `tuktuk_img013_sam2.jpg` |
+| `img_013.jpg` | SAM 1 MobileSAM (`mobile_sam.pt`) | 3 (2 `+`, 1 `-`) | Có: tách người ngồi quán phía sau sạch hơn `sam2.1_t`, nhưng vẫn dính vùng má/mặt và bàn chân người lái dù có điểm âm ở lưng | Khuyết một phần đáy lốp sau, sót biển `TAXI` và có lỗ nhỏ ở sàn để chân | `tuktuk_img013_sam1.jpg` |
+| `img_004.jpg` | SAM 2.1 tiny (`sam2.1_t.pt`) | 3 (2 `+`, 1 `-`) | Không (xe không có người lái; điểm âm `(465,450)` giúp không dính người đứng cạnh và không dính hàng hóa) | Lem bóng đổ xuống nền gạch đỏ dưới bánh trước; mui bạt bị rỗ/thủng nhiều mảng và sót biển `TAXI` | `tuktuk_img004_sam2.jpg` |
+| `img_017.jpg` | SAM 2.1 tiny (`sam2.1_t.pt`) | 3 (2 `+`, 1 `-`) | Không (xe không có người lái; không lem sang hai người đi bộ bên trái hay hàng hóa phía sau) | Điểm âm `(645,355)` đặt trúng lên mui chữ `MR.K` làm khuyết nham nhở mép dưới mui; dính vài đốm nền tối trong khoang xe và sót biển `TAXI` | `tuktuk_img017_sam2.jpg` |
 
-- Đối chiếu guideline mục 4.2: quy tắc nào giúp, quy tắc nào thiếu? <<>>
-- *(Tuỳ chọn)* Interactor SAM trong CVAT: làm được / không (lỗi gì, đã thử gì); khác gì offline: <<>>
+- Đối chiếu guideline mục 4.2:
+  - **Quy tắc giúp ích:** Mục 4.2.2 (xử lý lỗ thủng lớn ở khung hở) giải thích vì sao phần nền và người ngồi quán nhìn xuyên qua khoang tuk-tuk (`img_013.jpg`) phải được tách bỏ; mục 4.2.3 (`bóng đổ không thuộc vật`) giúp nhận ra lỗi lem bóng dưới bánh trước ở `img_004.jpg`; mục 4.2.4 (`hai vật chạm nhau không chồng lấn`) khẳng định người lái ở `img_013.jpg` thuộc lớp `person` riêng nên cần thêm click âm ở đầu và chân để tách dứt điểm.
+  - **Quy tắc còn thiếu (cần chốt ở v1.1):** Chưa quy định rõ phần nhìn xuyên qua kính chắn gió trong suốt (`img_004.jpg`, `img_017.jpg` — câu hỏi mở 5) thuộc mask xe hay nền, và biển chữ `TAXI` gắn nhô trên nóc xe (cả 4 lần chạy đều bỏ sót) có bắt buộc bao vào mask `three_wheeler` hay không.
+- *(Tuỳ chọn)* Interactor SAM trong CVAT: Chưa dùng trực tiếp trên CVAT vì CVAT Docker hiện tại chưa cài serverless Nuclio; đã thay thế bằng `scripts/sam2_points.py` offline (cùng cơ chế click dương/âm, nhưng offline phải tự nhập tọa độ pixel và kiểm lại ảnh `.jpg` xuất ra thay vì xem và chỉnh sửa trực tiếp thành polygon trên canvas CVAT).
 
 ## 6. Calibration (Part 6)
 

@@ -1,0 +1,10 @@
+image,object_id,error_type,reviewer,note
+img_003.jpg,6,sai_lop,2A202603034,Xe máy 2 bánh chở sọt hàng bị gán nhãn three_wheeler (phải là motorbike)
+img_003.jpg,1,sai_vi_tri_kich_thuoc,2A202603034,Mép trên box three_wheeler dư ~45 px khoảng trời phía trên mái bạt
+img_006.jpg,,bo_sot,2A202603034,Bỏ sót ô tô trắng ở cuối ngõ phía sau #55/#67 và xe máy đỗ sau #52/#65
+img_014.jpg,115,sai_vi_tri_kich_thuoc,2A202603034,Mép trên box motorbike (66-F1 7741) dư ~75 px mặt đường trống phía trên yên xe
+img_014.jpg,107,sai_vi_tri_kich_thuoc,2A202603034,Gộp cả người lái và người ngồi sau mũ xanh vào 1 box person (cần tách 2 box)
+img_031.jpg,386,sai_vi_tri_kich_thuoc,2A202603034,Box bicycle lệch phải (~50 px nền đường trước bánh trước) và cắt mất mâm trái cây phía sau
+img_031.jpg,385,sai_vi_tri_kich_thuoc,2A202603034,Box person dừng ngang hông (y=438) nên thiếu phần quần/chân nhìn thấy phía dưới
+img_035.jpg,431,sai_vi_tri_kich_thuoc,2A202603034,Mép trái box motorbike kéo rộng ~45 px trùm sang người ngồi #440
+img_035.jpg,429,sai_vi_tri_kich_thuoc,2A202603034,Mép trái box motorbike kéo lấn sang thân người #432
