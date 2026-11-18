@@ -5,7 +5,7 @@
 - Lớp (L2 / L3 / khác): L2A
 - Tài khoản GitHub: thanhduc270998
 - Repo bài nộp (URL): https://github.com/thanhduc270998/K5-L2A-DAY08-2A202603034-TruongThanhDuc-AIPrelabel.git
-- Commit chốt bài (hash): (cập nhật hash commit cuối sau khi commit/push báo cáo)
+- Commit chốt bài (hash): a61587e
 - Máy: Windows 10 Home 64-bit, NVIDIA GeForce MX150 2GB + Intel UHD Graphics 620 (chạy model trên CPU qua PyTorch 2.15.0+cpu)
 - CVAT (Docker): v2.74.1 (http://localhost:8080)
 
